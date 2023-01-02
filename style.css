@@ -32,6 +32,7 @@ body {
   background-size: cover;
 
   font-family: "Inter", sans-serif;
+  height: 100vh;
 }
 
 body * {
@@ -39,14 +40,14 @@ body * {
 }
 
 .container {
-  width: 36rem;
+  width: 100%;
+  max-width: 58.8rem;
   height: 71.2rem;
-  margin: 5.6rem auto 0;
+  margin: 5.6rem auto;
 }
 
 .profile {
   text-align: center;
-  padding: 2.4rem;
 }
 
 .profile img {
@@ -69,7 +70,7 @@ body * {
 .switch {
   position: relative;
   width: 6.4rem;
-  margin: 0.4rem auto;
+  margin: 2.4rem auto;
 }
 
 .switch button {
@@ -83,6 +84,7 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-back 0.4s;
 
   background: #ffffff;
   background-image: var(--button-switch-background);
@@ -90,9 +92,12 @@ body * {
   background-position: center;
 }
 
+.switch button:hover {
+  outline: 8px solid var(--background-effect-hover);
+}
+
 .light .switch button {
-  left: initial;
-  right: 0;
+  animation: slide-in 0.4s forwards;
 }
 
 .switch span {
@@ -114,7 +119,7 @@ body * {
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
-  padding-top: 2.4rem;
+
   padding-bottom: 0.24rem;
 }
 
@@ -182,4 +187,31 @@ footer .line {
 
 footer .design-by {
   font-size: 1.4rem;
+}
+
+@media (min-with: 60rem) {
+  :root {
+    --background-image: url(./assets/Interface=Desktop\\ Theme=Dark\ mode.jpg);
+  }
+
+  .light {
+    --background-image: url(./assets/Interface=Desktop\\ Theme=Light\ mode.png);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
