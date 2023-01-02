@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --text-color: white;
+  --border-color: white;
+  --border-background: 1px solid rgba(255, 255, 255, 0.5);
+  --background-effect-instance: rgba(255, 255, 255, 0.1);
+  --background-effect-hover: rgba(255, 255, 255, 0.05);
+  --background-image: url(./assets/Mobile\ -\ Dark\ 1080x1920.jpg);
+  --button-switch-background: url(./assets/button-dark.svg);
+}
+
+.light {
+  --text-color: black;
+  --border-color: black;
+  --border-background: 1px solid rgba(0, 0, 0, 0.5);
+  --background-effect-instance: rgba(0, 0, 0, 0.1);
+  --background-effect-hover: rgba(0, 0, 0, 0.05);
+  --background-image: url(./assets/Mobile\ -\ Light\ 1080x1920.jpg);
+  --button-switch-background: url(./assets/button-light.svg);
+}
+
+body {
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  font-family: "Inter", sans-serif;
+}
+
+body * {
+  color: var(--text-color);
+}
+
+.container {
+  width: 36rem;
+  height: 71.2rem;
+  margin: 5.6rem auto 0;
+}
+
+.profile {
+  text-align: center;
+  padding: 2.4rem;
+}
+
+.profile img {
+  width: 11.2rem;
+  height: 11.2rem;
+  border-radius: 50%;
+
+  border: 0.5rem solid var(--border-color);
+  box-shadow: 0px 0px 20px var(--border-color);
+}
+
+.profile p {
+  font-weight: 500;
+  font-size: 2.6rem;
+  line-height: 2.4rem;
+
+  margin-top: 0.8rem;
+}
+
+.switch {
+  position: relative;
+  width: 6.4rem;
+  margin: 0.4rem auto;
+}
+
+.switch button {
+  height: 3.2rem;
+  width: 3.2rem;
+  border: none;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  background: #ffffff;
+  background-image: var(--button-switch-background);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.light .switch button {
+  left: initial;
+  right: 0;
+}
+
+.switch span {
+  display: block;
+  height: 2.4rem;
+  width: 6.4rem;
+  border-radius: 999.9rem;
+
+  background: var(--background-effect-instance);
+
+  border: var(--border-background);
+  --webkit-backdrop-filter: blur(4px);
+}
+
+.container ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  padding-top: 2.4rem;
+  padding-bottom: 0.24rem;
+}
+
+.container ul li {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+
+  width: 31.2rem;
+  height: 5.6rem;
+}
+
+.container ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  -webkit-backdrop-filter: blur(0.4rem);
+
+  padding: 1.2rem 2rem;
+
+  background: var(--background-effect-instance);
+  border: var(--border-background);
+  border-radius: 0.8rem;
+
+  transition: background 0.5s;
+}
+
+.container ul li a:hover {
+  background: var(--background-effect-hover);
+  border: 1.5px solid var(--border-color);
+  border-radius: 0.8rem;
+}
+
+.container ul li a ion-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+footer {
+  width: 31.2rem;
+  height: 5.6rem;
+
+  line-height: 2.4rem;
+
+  padding: 1.2rem 2rem;
+
+  margin: 0 auto;
+  text-align: center;
+
+  font-weight: bold;
+}
+
+footer .contact {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+footer .line {
+  height: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+footer .design-by {
+  font-size: 1.4rem;
+}
